@@ -19,7 +19,7 @@ export const MediaViewer = ({ url, isVideo = false }: Props) => {
       </video>
     );
   }
-
+console.log("url", url)
   return (
     <img
       className="aspect-square rounded-xl object-cover"

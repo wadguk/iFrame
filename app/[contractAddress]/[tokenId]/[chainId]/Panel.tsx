@@ -119,7 +119,7 @@ export const Panel = ({
               if (isVideo) {
                 media = t?.media[0]?.raw;
               }
-
+              console.log("tokens",tokens)
               const openseaUrl = `${chainIdToOpenseaAssetUrl[chainId]}/${t.contract.address}/${t.tokenId}`;
 
               return (

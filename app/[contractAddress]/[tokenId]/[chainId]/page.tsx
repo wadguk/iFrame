@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import useSWR from "swr";
-import { isNil } from "lodash";
+import { forEach, isNil } from "lodash";
 import { TokenboundClient } from "@tokenbound/sdk";
 import { getAccount, getAccountStatus, getLensNfts, getNfts } from "@/lib/utils";
 import { TbLogo } from "@/components/icon";
@@ -95,6 +95,25 @@ export default function Token({ params, searchParams }: TokenParams) {
         getNfts(chainIdNumber, account),
         getLensNfts(account),
       ]);
+      // data.forEach(async tokenData  => {
+      //   const endpoint = tokenData.tokenUri!.gateway;
+      //   const tokenId =tokenData.tokenId;
+      //   const response = await fetch(`${endpoint}/${tokenId}.json`);
+      //   if (!response.ok) {
+      //     throw new Error(`HTTP error! status: ${response.status}`);
+      //   }
+    
+      //   const data = await response.json();
+      //   console.log(`response ${data.toString()}`)
+  
+      //   tokenData.media.push(data.image)
+      //   // tokenData.tokenUri!.gateway.replace("https://ipfs.io/ipfs/", "https://ipfs-us-private.quantelica.com/ipfs/");
+      //   // let gateway: string | undefined;
+      //   // gateway = tokenData.tokenUri?.gateway.replace("https://ipfs.io/ipfs/", "https://ipfs-us-private.quantelica.com/ipfs/");
+      //   // tokenData!.tokenUri!.gateway! = gateway;
+      //   // tokenData.tokenUri?.raw? = tokenData.tokenUri?.raw.replace("https://ipfs.io/ipfs/", "https://ipfs-us-private.quantelica.com/ipfs/");
+      // });
+      console.log("data, lensData",data, lensData)
       if (data) {
         setNfts(data);
       }
@@ -115,6 +134,7 @@ export default function Token({ params, searchParams }: TokenParams) {
 
   useEffect(() => {
     if (nfts !== undefined && nfts.length) {
+      console.log("nfts", nfts)
       nfts.map((token) => {
         const foundApproval = approvalData?.find((item) => {
           const contract = item.contract.address;

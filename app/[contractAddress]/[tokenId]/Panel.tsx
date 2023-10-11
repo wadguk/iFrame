@@ -104,6 +104,7 @@ export const Panel = ({ className, approvalTokensCount, account, tokens, title }
               if (isVideo) {
                 media = t?.media[0]?.raw;
               }
+              console.log("media",media)
 
               return (
                 <li key={`${t.contract.address}-${t.tokenId}-${i}`} className="list-none">
