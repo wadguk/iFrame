@@ -156,7 +156,7 @@ export default function Token({ params, searchParams }: TokenParams) {
   }, [nfts, approvalData, lensNfts]);
 
   const showLoading = disableloading !== "true" && nftMetadataLoading;
-
+console.log("nftMetadata", nftMetadata)
   return (
     <div className="h-screen w-screen bg-slate-100">
       <div className="max-w-screen relative mx-auto aspect-square max-h-screen overflow-hidden bg-white">
@@ -168,7 +168,7 @@ export default function Token({ params, searchParams }: TokenParams) {
               approvalTokensCount={approvalData?.filter((item) => item.hasApprovals).length}
               account={account}
               tokens={tokens}
-              title={nftMetadata.title}
+              title={nftMetadata.tokenId}
               chainId={chainIdNumber}
               logo={logo}
             />

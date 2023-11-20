@@ -57,12 +57,14 @@ export const Panel = ({
       <div className="mb-4 flex w-full items-center justify-center">
         <div className="h-[2.5px] w-[34px] bg-[#E4E4E4]"></div>
       </div>
-      <h1 className="text-base font-bold uppercase text-black">{title}</h1>
+      {/* <h1 className="text-base font-bold uppercase text-black " style={{ fontSize: '28px' }}>DICEPASS #{title}</h1> */}
 
       {account && displayedAddress && (
-        <div className="flex items-center justify-start space-x-2">
+
+        <div className="flex items-center justify-start space-x-2" style={{ justifyContent: "right"}}>
+           <h1 className="text-base font-bold uppercase text-black " style={{ fontSize: '28px', marginRight: 'auto' }}>DICEPASS #{title}</h1>
           <span
-            className="inline-block rounded-2xl bg-[#F6F8FA] px-4 py-2 text-xs font-bold text-[#666D74] hover:cursor-pointer"
+            className="inline-block rounded-2xl bg-[#F6F8FA] px-4 py-2 text-xl font-bold text-[#666D74] hover:cursor-pointer"
             onClick={() => {
               const textarea = document.createElement("textarea");
               textarea.textContent = account;
