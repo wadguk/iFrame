@@ -25,11 +25,11 @@ export async function getNfts(chainId: number, account: string) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      console.log(`response ${data.toString()}`)
+      console.log(`response ${JSON.stringify(data)}`)
 
       tokenData.media.push({
         gateway: data.image,
-        raw: data.animation_url
+        raw: data?.animation_url
       })
     });
     console.log("TEST! data", data)
@@ -86,7 +86,7 @@ function isTokenId(value: number): value is TokenId {
 }
 
 // const providerEndpoint = process.env.NEXT_PUBLIC_PROVIDER_ENDPOINT || "";
-const provider = new ethers.providers.JsonRpcProvider("https://polygon-mumbai-bor.publicnode.com");
+const provider = new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/polygon");
 export async function getNftAsset(
   contractAddress: string,
   tokenId: number,
