@@ -159,7 +159,38 @@ export default function Token({ params, searchParams }: TokenParams) {
 console.log("nftMetadata", nftMetadata)
   return (
     <div className="h-screen w-screen bg-slate-100">
+     
       <div className="max-w-screen relative mx-auto aspect-square max-h-screen overflow-hidden bg-white">
+      <h2 className="text-with-fade-in" 
+           style={{
+            color: "white",
+            backgroundColor: "transparent",
+            fontSize: "11vw",
+            fontWeight: "bold",
+            position: "absolute",
+            top: "23%", 
+            right: "-20%",
+            marginRight: 'auto',
+            zIndex: "2",
+            transform: "rotate(90deg)",
+            opacity: "0",
+          }}
+          >DICEPASS</h2>
+           <h2 className="text-with-fade-in" 
+           style={{
+            color: "white",
+            backgroundColor: "transparent",
+            fontSize: "11vw",
+            fontWeight: "bold",
+            position: "absolute",
+            top: "60%", 
+            left: "-20%",
+            marginRight: 'auto',
+            zIndex: "2",
+            transform: "rotate(270deg)",
+            opacity: "0",
+          }}
+          >DICEPASS</h2>
         <div className="relative h-full w-full" >
           {account && nftImages && nftMetadata && (
             <TokenDetail
@@ -173,20 +204,7 @@ console.log("nftMetadata", nftMetadata)
               logo={logo}
             />
           )}
-          <h2 className="text-with-fade-in" 
-           style={{
-            color: "white",
-            backgroundColor: "transparent",
-            fontSize: "calc(4vw + 3vh)",
-            fontWeight: "bold",
-            position: "absolute",
-            top: "21%", 
-            right: "-19%",
-            zIndex: "2",
-            transform: "rotate(90deg)",
-            opacity: "0",
-          }}
-          >DICEPASS</h2>
+        
           <div className="absolute inset-0 border-20 border-white z-4 text-with-fade-in" style={{
             // backgroundColor:" #BAD9FF",
             borderColor: " white",

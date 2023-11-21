@@ -48,7 +48,7 @@ body {
 
 .gradient-q {
   background:
-  linear-gradient(to right,  #49a8f69d,   #BAD9FF,#f1f7ff,#f1f7ff, #BAD9FF,#8049f67d)
+  linear-gradient(to right,  #88cceb9d,   #c6dcf9,#f1f7ff,#f1f7ff, #f1f7ff, #becefd,#8AA4F3)
 }
 
 @keyframes fadeIn {
