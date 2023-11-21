@@ -41,3 +41,13 @@ body {
   border-width: 1.7px;
   border-color: rgb(0, 170, 255);
 }
+
+.text-with-fade-in {
+  animation: fadeIn 15s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
