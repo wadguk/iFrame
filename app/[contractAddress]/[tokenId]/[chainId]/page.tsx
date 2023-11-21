@@ -187,12 +187,13 @@ console.log("nftMetadata", nftMetadata)
             opacity: "0",
           }}
           >DICEPASS</h2>
-          <div className="absolute inset-0 border-20 border-white z-4" style={{
+          <div className="absolute inset-0 border-20 border-white z-4 text-with-fade-in" style={{
             // backgroundColor:" #BAD9FF",
             borderColor: " white",
             background: "transparent",
             borderWidth: '15px',
-            zIndex: '1'
+            zIndex: '1',
+            opacity: '0'
             }}/>
           <div className="max-h-1080[px] relative h-full w-full max-w-[1080px] z-2" style={{backgroundColor:"#4994F6"}}>
             {showLoading ? (
