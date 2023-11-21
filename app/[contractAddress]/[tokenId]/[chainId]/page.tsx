@@ -196,7 +196,7 @@ console.log("nftMetadata", nftMetadata)
                       className="col-span-1 col-start-1 row-span-1 row-start-1 translate-x-0"
                       src={image}
                       alt="Nft image"
-                      style={{ scale: "0.6", marginTop:"-200px", background:"transparent"}}
+                      style={{ scale: "0.6", marginTop:"-210px", background:"transparent"}}
                     />
                   ))
                 ) : (

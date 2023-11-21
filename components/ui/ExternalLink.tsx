@@ -17,9 +17,10 @@ export function ExternalLink({ link, className, ...rest }: Props) {
       rel="noopener noreferrer"
       href={link}
       className={clsx("cursor-pointer", className)}
+      style={{marginTop: "-19px"}}
       {...rest}
     >
-      <ExternalLinkIcon height={"20px"} width={"20px"} color="#A1A1AA" />
+      <ExternalLinkIcon height={"33px"} width={"33px"} color="#A1A1AA"/>
     </a>
   );
 }
