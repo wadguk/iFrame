@@ -213,9 +213,9 @@ console.log("nftMetadata", nftMetadata)
             zIndex: '1',
             opacity: '0'
             }}/>
-          <div className="max-h-1080[px] relative h-full w-full max-w-[1080px] z-2" style={{backgroundColor:"#4994F6"}}>
+          <div className="max-h-1080[px] relative h-full w-full max-w-[1080px] z-2" style={{backgroundColor:"white"}}>
             {showLoading ? (
-              <div className="absolute left-[40%] top-[48%] z-10 h-20 w-20 -translate-x-[50%] -translate-y-[50%] animate-bounce">
+              <div className="absolute left-[0%] top-[10%] z-10 h-20 w-20 -translate-x-[50%] -translate-y-[50%] animate-bounce">
                 <TbLogo />
               </div>
             ) : (
