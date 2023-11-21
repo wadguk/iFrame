@@ -12,6 +12,8 @@ import { getEtherscanLink, shortenAddress } from "@/lib/utils";
 import { chainIdToOpenseaAssetUrl } from "@/lib/constants";
 
 export const TABS = {
+  ACHIEVEMENTS: "Achievements",
+  ITEMS: "Items",
   COLLECTIBLES: "Collectibles",
   ASSETS: "Assets",
 };
@@ -163,6 +165,16 @@ export const Panel = ({
               <div className="text-base text-[#979797]">{tokenData.balance}</div>
             </div>
           ))}
+        </div>
+      </TabPanel>
+      <TabPanel value={TABS.ITEMS} currentTab={currentTab}>
+        <div className="flex w-full flex-col space-y-3">
+         <img src="/coming-soon.avif" alt="coming soon" className="h-[600px] w-[600px] m-auto"/>
+        </div>
+      </TabPanel>
+      <TabPanel value={TABS.ACHIEVEMENTS} currentTab={currentTab}>
+        <div className="flex w-full flex-col space-y-3">
+         <img src="/coming-soon.avif" alt="coming soon" className="h-[600px] w-[600px] m-auto"/>
         </div>
       </TabPanel>
     </div>

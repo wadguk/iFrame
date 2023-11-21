@@ -10,6 +10,8 @@ import { ethers } from "ethers";
 import { useGetTokenBalances } from "@/lib/hooks";
 
 export const TABS = {
+  ACHIEVEMENTS: "Achievements",
+  ITEMS: "Items",
   COLLECTIBLES: "Collectibles",
   ASSETS: "Assets",
 };

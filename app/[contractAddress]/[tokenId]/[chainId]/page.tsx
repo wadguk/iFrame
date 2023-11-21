@@ -160,7 +160,7 @@ console.log("nftMetadata", nftMetadata)
   return (
     <div className="h-screen w-screen bg-slate-100">
       <div className="max-w-screen relative mx-auto aspect-square max-h-screen overflow-hidden bg-white">
-        <div className="relative h-full w-full">
+        <div className="relative h-full w-full" >
           {account && nftImages && nftMetadata && (
             <TokenDetail
               isOpen={showTokenDetail}
@@ -173,13 +173,18 @@ console.log("nftMetadata", nftMetadata)
               logo={logo}
             />
           )}
-          <div className="max-h-1080[px] relative h-full w-full max-w-[1080px]">
+          <h2 style={{
+            color:"white", backgroundColor:"transparent", fontSize: "80px", fontWeight:"bold", position: "fixed", 
+            top: "150px", right: "40px", zIndex: "2", transform: "rotate(90deg)"
+            }}>DICEPASS</h2>
+          <div className="max-h-1080[px] relative h-full w-full max-w-[1080px] z-2" style={{backgroundColor:"#4994F6"}}>
             {showLoading ? (
               <div className="absolute left-[45%] top-[50%] z-10 h-20 w-20 -translate-x-[50%] -translate-y-[50%] animate-bounce">
                 <TbLogo />
               </div>
             ) : (
-              <div
+             
+              <div style={{background:"linear-gradient(to top,  #FFFFFF, #4994F6"}}
                 className={`bg-white h-full w-full grid grid-cols-1 grid-rows-1 transition ${
                   imagesLoaded ? "" : "blur-xl"
                 }`}
@@ -191,6 +196,7 @@ console.log("nftMetadata", nftMetadata)
                       className="col-span-1 col-start-1 row-span-1 row-start-1 translate-x-0"
                       src={image}
                       alt="Nft image"
+                      style={{ scale: "0.6", marginTop: "-300px", background:"linear-gradient(to top,  #FFFFFF, #4994F6"}}
                     />
                   ))
                 ) : (
