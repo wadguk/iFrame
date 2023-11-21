@@ -60,7 +60,7 @@ export const TokenDetail = ({
   return (
     <div className={className}>
       <motion.div
-        className="absolute left-4 top-4 z-10 rounded-full cursor-pointer"
+        className="absolute left-7 top-7 z-10 rounded-full cursor-pointer"
         whileHover="hover"
         variants={iconVariant}
         initial="unHovered"

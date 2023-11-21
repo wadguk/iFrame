@@ -177,16 +177,23 @@ console.log("nftMetadata", nftMetadata)
            style={{
             color: "white",
             backgroundColor: "transparent",
-            fontSize: "calc(3vw + 5vh)",
+            fontSize: "calc(4vw + 3vh)",
             fontWeight: "bold",
             position: "absolute",
-            top: "18%", 
-            right: "-16%",
+            top: "21%", 
+            right: "-19%",
             zIndex: "2",
             transform: "rotate(90deg)",
             opacity: "0",
           }}
           >DICEPASS</h2>
+          <div className="absolute inset-0 border-20 border-white z-4" style={{
+            // backgroundColor:" #BAD9FF",
+            borderColor: " white",
+            background: "transparent",
+            borderWidth: '15px',
+            zIndex: '1'
+            }}/>
           <div className="max-h-1080[px] relative h-full w-full max-w-[1080px] z-2" style={{backgroundColor:"#4994F6"}}>
             {showLoading ? (
               <div className="absolute left-[40%] top-[48%] z-10 h-20 w-20 -translate-x-[50%] -translate-y-[50%] animate-bounce">
@@ -215,7 +222,7 @@ console.log("nftMetadata", nftMetadata)
                     src={image}
                     alt="Nft image"
                     style={{
-                      width: "60%",
+                      width: "57%",
                     }}
                   />
                 ))
