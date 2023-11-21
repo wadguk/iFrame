@@ -177,7 +177,7 @@ console.log("nftMetadata", nftMetadata)
            style={{
             color: "white",
             backgroundColor: "transparent",
-            fontSize: "9vh",
+            fontSize: "calc(3vw + 5vh)",
             fontWeight: "bold",
             position: "absolute",
             top: "18%", 
