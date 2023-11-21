@@ -168,14 +168,14 @@ export const Panel = ({
         </div>
       </TabPanel>
       <TabPanel value={TABS.ITEMS} currentTab={currentTab}>
-        <div className="flex w-full flex-col space-y-3">
+        {/* <div className="flex w-full flex-col space-y-3">
          <img src="/coming-soon.avif" alt="coming soon" className="h-[600px] w-[600px] m-auto"/>
-        </div>
+        </div> */}
       </TabPanel>
       <TabPanel value={TABS.ACHIEVEMENTS} currentTab={currentTab}>
-        <div className="flex w-full flex-col space-y-3">
+        {/* <div className="flex w-full flex-col space-y-3">
          <img src="/coming-soon.avif" alt="coming soon" className="h-[600px] w-[600px] m-auto"/>
-        </div>
+        </div> */}
       </TabPanel>
     </div>
   );
