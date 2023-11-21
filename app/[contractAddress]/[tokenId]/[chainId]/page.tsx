@@ -173,10 +173,20 @@ console.log("nftMetadata", nftMetadata)
               logo={logo}
             />
           )}
-          <h2 className="text-with-fade-in" style={{
-            color:"white", backgroundColor:"transparent", fontSize: "80px", fontWeight:"bold", position: "absolute", 
-            top: "150px", right: "-160px", zIndex: "2", transform: "rotate(90deg)", opacity:'0'
-            }}>DICEPASS</h2>
+          <h2 className="text-with-fade-in" 
+           style={{
+            color: "white",
+            backgroundColor: "transparent",
+            fontSize: "9vh",
+            fontWeight: "bold",
+            position: "absolute",
+            top: "18%", 
+            right: "-16%",
+            zIndex: "2",
+            transform: "rotate(90deg)",
+            opacity: "0",
+          }}
+          >DICEPASS</h2>
           <div className="max-h-1080[px] relative h-full w-full max-w-[1080px] z-2" style={{backgroundColor:"#4994F6"}}>
             {showLoading ? (
               <div className="absolute left-[40%] top-[48%] z-10 h-20 w-20 -translate-x-[50%] -translate-y-[50%] animate-bounce">
@@ -184,25 +194,35 @@ console.log("nftMetadata", nftMetadata)
               </div>
             ) : (
              
-              <div style={{background:"linear-gradient(to top,  #4994F6, #BAD9FF,  #BAD9FF,#4994F6"}}
-                className={`bg-white h-full w-full grid grid-cols-1 grid-rows-1 transition ${
-                  imagesLoaded ? "" : "blur-xl"
-                }`}
-              >
-                {!isNil(nftImages) ? (
-                  nftImages.map((image, i) => (
-                    <img
-                      key={i}
-                      className="col-span-1 col-start-1 row-span-1 row-start-1 translate-x-0"
-                      src={image}
-                      alt="Nft image"
-                      style={{ scale: "0.6", marginTop:"-210px", background:"transparent"}}
-                    />
-                  ))
-                ) : (
-                  <></>
-                )}
-              </div>
+              <div
+              style={{
+                background:
+                  "linear-gradient(to top,  #4994F6, #BAD9FF,  #BAD9FF,#4994F6",
+                alignItems: "center",
+                display: "flex", 
+                justifyContent: "center", 
+                flexDirection: "column", 
+              }}
+              className={`bg-white h-full w-full grid grid-cols-1 grid-rows-1 transition ${
+                imagesLoaded ? "" : "blur-xl"
+              }`}
+            >
+              {!isNil(nftImages) ? (
+                nftImages.map((image, i) => (
+                  <img
+                    key={i}
+                    className="col-span-1 col-start-1 row-span-1 row-start-1 translate-x-0"
+                    src={image}
+                    alt="Nft image"
+                    style={{
+                      width: "60%",
+                    }}
+                  />
+                ))
+              ) : (
+                <></>
+              )}
+            </div>
             )}
           </div>
         </div>
