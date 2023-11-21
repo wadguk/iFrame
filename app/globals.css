@@ -31,3 +31,13 @@ body {
 .custom-scroll {
   scrollbar-width: none;
 }
+
+.image-with-shadow {
+  transition: box-shadow 0.3s ease; 
+}
+
+.image-with-shadow:hover {
+   /* box-shadow: 0 0 31px rgba(0, 0, 0, 0.5);  */
+  border-width: 1.7px;
+  border-color: rgb(0, 170, 255);
+}

@@ -173,10 +173,10 @@ console.log("nftMetadata", nftMetadata)
               logo={logo}
             />
           )}
-          {/* <h2 style={{
-            color:"white", backgroundColor:"transparent", fontSize: "80px", fontWeight:"bold", position: "fixed", 
-            top: "150px", right: "40px", zIndex: "2", transform: "rotate(90deg)"
-            }}>DICEPASS</h2> */}
+          <h2 style={{
+            color:"white", backgroundColor:"transparent", fontSize: "80px", fontWeight:"bold", position: "absolute", 
+            top: "150px", right: "-150px", zIndex: "2", transform: "rotate(90deg)"
+            }}>DICEPASS</h2>
           <div className="max-h-1080[px] relative h-full w-full max-w-[1080px] z-2" style={{backgroundColor:"#4994F6"}}>
             {showLoading ? (
               <div className="absolute left-[40%] top-[48%] z-10 h-20 w-20 -translate-x-[50%] -translate-y-[50%] animate-bounce">
