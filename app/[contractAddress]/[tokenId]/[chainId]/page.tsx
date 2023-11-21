@@ -174,8 +174,12 @@ console.log("nftMetadata", nftMetadata)
             />
           )}
           <h2 style={{
-            color:"white", backgroundColor:"transparent", fontSize: "80px", fontWeight:"bold", position: "absolute", 
-            top: "150px", right: "-150px", zIndex: "2", transform: "rotate(90deg)"
+            color:"white", backgroundColor:"transparent", fontSize: "100px", fontWeight:"bold", position: "absolute", 
+            top: "180px", right: "-200px", zIndex: "1", transform: "rotate(90deg)"
+            }}>DICEPASS</h2>
+          <h2 style={{
+            color:"white", backgroundColor:"transparent", fontSize: "100px", fontWeight:"bold", position: "absolute", 
+            top: "580px", right: "610px", zIndex: "1", transform: "rotate(270deg)"
             }}>DICEPASS</h2>
           <div className="max-h-1080[px] relative h-full w-full max-w-[1080px] z-2" style={{backgroundColor:"#4994F6"}}>
             {showLoading ? (
@@ -184,7 +188,7 @@ console.log("nftMetadata", nftMetadata)
               </div>
             ) : (
              
-              <div style={{background:"linear-gradient(to top,  #FFFFFF, #4994F6"}}
+              <div style={{background:"linear-gradient(to top,  #4994F6, #BAD9FF, #4994F6"}}
                 className={`bg-white h-full w-full grid grid-cols-1 grid-rows-1 transition ${
                   imagesLoaded ? "" : "blur-xl"
                 }`}
