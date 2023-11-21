@@ -64,7 +64,7 @@ export const Panel = ({
       {account && displayedAddress && (
 
         <div className="flex items-center justify-start space-x-2" style={{ justifyContent: "right"}}>
-           <h1 className="text-base uppercase text-black " style={{ fontSize: '38px', marginRight: 'auto' }}>DICEPASS #{title}</h1>
+           <h1 className="text-base uppercase text-black " style={{ fontSize: '34px', marginRight: 'auto' }}>DICEPASS #{title}</h1>
           <span
             className="inline-block rounded-2xl bg-[#F6F8FA] px-4 py-2 text-xl font-bold text-[#666D74] hover:cursor-pointer"
             onClick={() => {
