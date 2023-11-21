@@ -204,14 +204,14 @@ console.log("nftMetadata", nftMetadata)
              
               <div
               style={{
-                background:
-                  "linear-gradient(to top,  #4994F6, #BAD9FF,  #BAD9FF,#4994F6",
+                // background:
+                //   "linear-gradient(to top,  #4994F6, #BAD9FF,  #BAD9FF,#4994F6",
                 alignItems: "center",
                 display: "flex", 
                 justifyContent: "center", 
                 flexDirection: "column", 
               }}
-              className={`bg-white h-full w-full grid grid-cols-1 grid-rows-1 transition ${
+              className={`gradient-q bg-white h-full w-full grid grid-cols-1 grid-rows-1 transition ${
                 imagesLoaded ? "" : "blur-xl"
               }`}
             >

@@ -46,6 +46,11 @@ body {
   animation: fadeIn 15s forwards;
 }
 
+.gradient-q {
+  background:
+  linear-gradient(to right,  #49a8f69d,   #BAD9FF,#f1f7ff,#f1f7ff, #BAD9FF,#8049f67d)
+}
+
 @keyframes fadeIn {
   to {
     opacity: 1;
