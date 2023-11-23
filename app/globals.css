@@ -56,3 +56,45 @@ body {
     opacity: 1;
   }
 }
+
+@keyframes levitate {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+.levitating-image {
+  width: 57%;
+  position: absolute;
+  top: 5%;
+  left:22%;
+  border: none;
+  border-radius: 15px;
+  animation: float 4s ease-in-out infinite; 
+
+}
+
+.levitating-image:hover {
+  box-shadow: 0px 0px 60px rgb(209, 125, 0); /* Тень при наведении */
+  border-color: rgb(209, 125, 0); /* Золотая обводка при наведении */
+}

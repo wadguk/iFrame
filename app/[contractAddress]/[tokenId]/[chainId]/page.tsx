@@ -237,7 +237,7 @@ console.log("nftMetadata", nftMetadata)
                 nftImages.map((image, i) => (
                   <img
                     key={i}
-                    className="col-span-1 col-start-1 row-span-1 row-start-1 translate-x-0"
+                    className="col-span-1 col-start-1 row-span-1 row-start-1 translate-x-0 levitating-image"
                     src={image}
                     alt="Nft image"
                     style={{
