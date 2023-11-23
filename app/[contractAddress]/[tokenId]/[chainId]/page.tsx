@@ -240,9 +240,11 @@ console.log("nftMetadata", nftMetadata)
                     className="col-span-1 col-start-1 row-span-1 row-start-1 translate-x-0 levitating-image"
                     src={image}
                     alt="Nft image"
-                    style={{
-                      width: "57%",
-                    }}
+                    // style={{
+                    //   width: "57%",
+                    //   borderWidth: '4px',
+                    
+                    // }}
                   />
                 ))
               ) : (
