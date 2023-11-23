@@ -86,7 +86,7 @@ function isTokenId(value: number): value is TokenId {
 }
 
 // const providerEndpoint = process.env.NEXT_PUBLIC_PROVIDER_ENDPOINT || "";
-const provider = new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/polygon");
+const provider = new ethers.providers.JsonRpcProvider("https://polygon-mainnet.infura.io/v3/ce3af109ef89407b912fc43118dfae6e");
 export async function getNftAsset(
   contractAddress: string,
   tokenId: number,
