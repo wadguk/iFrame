@@ -44,7 +44,18 @@ export default function Token({ params, searchParams }: TokenParams) {
     hasCustomImplementation: HAS_CUSTOM_IMPLEMENTATION,
     chainId: chainIdNumber,
   });
+  const container = document.querySelector(".container");
 
+  for (let i = 1; i <= 3; i++) {
+    const circleContainer = document.createElement("div");
+    circleContainer.classList.add("circle-container");
+
+    const circle = document.createElement("div");
+    circle.classList.add("circle");
+
+    circleContainer.appendChild(circle);
+    container?.appendChild(circleContainer);
+  }
   useEffect(() => {
     if (!isNil(nftImages) && nftImages.length) {
       const imagePromises = nftImages.map((src: string) => {
@@ -253,8 +264,12 @@ console.log("nftMetadata", nftMetadata)
             </div>
             )}
           </div>
+          <div className="container"></div>
         </div>
       </div>
+
+
+
     </div>
   );
 }
