@@ -83,6 +83,17 @@ body {
 		transform: translatey(0px);
 	}
 }
+// @keyframes floatS {
+// 	0% {
+// 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+//   }
+// 	50% {
+// 		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+// 	}
+// 	100% {
+// 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+// 	}
+// }
 
 .levitating-image {
   width: 57%;
@@ -115,6 +126,18 @@ body {
 	100% {
 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 		transform: translatey(0px);
+	}
+}
+
+@keyframes floatS {
+  0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 	}
 }
 
@@ -270,4 +293,95 @@ body {
       opacity: 1;
     }
   }
+}
+
+
+
+
+
+.wrap {
+  position: absolute;
+  margin: 0 auto;
+  // width: 250px;
+  // height: 350px;
+  cursor: pointer;
+  perspective: 800px;
+  z-index: 3;
+  animation: float 4s ease-in-out infinite; 
+  border: none;
+  background: none;
+
+  border-radius: 15px;
+  width: 57%;
+  top: var(--top-position, 5%);
+  left: 22%;
+}
+
+.wrap div {
+  // width: 100%;
+  // height: 100%;
+  // border-radius: 10px;
+  // background-position: 50% 50%;
+  background-size: 250px;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.3), 0 12px 20px -10px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font: bold 3em sans-serif;
+  // line-height: 350px;
+  backface-visibility: hidden;
+  position: absolute;
+
+  // width: 57%;
+  // top: var(--top-position, 5%);
+  // left: 22%;
+  border-radius: 15px;
+  border-width: 4px;
+  border-color: #ffffff; 
+  z-index: 3;
+  padding: 5px;
+  background-color: rgba(36, 21, 50, 0.925);
+  animation: floatS 4s ease-in-out infinite; 
+
+}
+
+.side-a {
+  background: black;
+  transform: rotateY(0deg);
+  z-index: 100;
+  transition: transform 0.5s ease-in-out;
+  
+}
+
+.side-b {
+  background: grey;
+  transform: rotateY(180deg);
+  z-index: 101;
+  transition: transform 0.5s ease-in-out;
+}
+
+.wrap:hover .side-a {
+  // animation: none;
+  // transform: rotateY(-180deg);
+  border-width: 8px;
+  border-color: rgb(255, 255, 255);
+  box-shadow:  0 0 45px rgba(243, 248, 252, 0.767);
+
+}
+
+.wrap:hover .side-b {
+  // animation: none;
+  // transform: rotateY(0deg);
+  border-width: 8px;
+  border-color: rgb(255, 255, 255);
+  box-shadow:  0 0 45px rgba(250, 252, 255, 0.767);
+}
+
+.side-a.flipped {
+  transform: rotateY(-180deg);
+}
+
+.side-b.flipped {
+  transform: rotateY(0deg);
 }

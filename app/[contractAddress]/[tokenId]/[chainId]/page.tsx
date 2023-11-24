@@ -33,6 +33,12 @@ export default function Token({ params, searchParams }: TokenParams) {
   const [showTokenDetail, setShowTokenDetail] = useState(false);
   const chainIdNumber = parseInt(chainId);
   const tokenboundClient = new TokenboundClient({ chainId: chainIdNumber });
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleFlipClick = () => {
+    console.log("TEST!")
+    setIsFlipped((prevIsFlipped) => !prevIsFlipped);
+  };
 
   const {
     data: nftImages,
@@ -44,23 +50,43 @@ export default function Token({ params, searchParams }: TokenParams) {
     hasCustomImplementation: HAS_CUSTOM_IMPLEMENTATION,
     chainId: chainIdNumber,
   });
- 
+
   useEffect(() => {
     const container = document.querySelector(".container");
-  
+
     if (container) {
       for (let i = 1; i <= 100; i++) {
         const circleContainer = document.createElement("div");
         circleContainer.classList.add("circle-container");
-  
+
         const circle = document.createElement("div");
         circle.classList.add("circle");
-  
+
         circleContainer.appendChild(circle);
         container.appendChild(circleContainer);
       }
     }
-  }, []); 
+
+    // var wrap = document.getElementById("myWrap");
+
+    // wrap?.addEventListener("click", function() {
+    //   var sideA = wrap?.querySelector(".side-a");
+    //   var sideB = wrap?.querySelector(".side-b");
+
+    //   // Получите текущее значение свойства transform элемента .side-a
+    //   var sideATransform = sideA?.style.transform;
+
+    //   if (sideATransform === "rotateY(0deg)") {
+    //     // Если элемент в исходном положении, переверните его
+    //     sideA.style.transform = "rotateY(-180deg)";
+    //     sideB.style.transform = "rotateY(0deg)";
+    //   } else {
+    //     // В противном случае верните его в исходное положение
+    //     sideA.style.transform = "rotateY(0deg)";
+    //     sideB.style.transform = "rotateY(180deg)";
+    //   }
+    // });
+  }, []);
 
   useEffect(() => {
     if (!isNil(nftImages) && nftImages.length) {
@@ -119,10 +145,10 @@ export default function Token({ params, searchParams }: TokenParams) {
       //   if (!response.ok) {
       //     throw new Error(`HTTP error! status: ${response.status}`);
       //   }
-    
+
       //   const data = await response.json();
       //   console.log(`response ${data.toString()}`)
-  
+
       //   tokenData.media.push(data.image)
       //   // tokenData.tokenUri!.gateway.replace("https://ipfs.io/ipfs/", "https://ipfs-us-private.quantelica.com/ipfs/");
       //   // let gateway: string | undefined;
@@ -130,7 +156,7 @@ export default function Token({ params, searchParams }: TokenParams) {
       //   // tokenData!.tokenUri!.gateway! = gateway;
       //   // tokenData.tokenUri?.raw? = tokenData.tokenUri?.raw.replace("https://ipfs.io/ipfs/", "https://ipfs-us-private.quantelica.com/ipfs/");
       // });
-      console.log("data, lensData",data, lensData)
+      console.log("data, lensData", data, lensData)
       if (data) {
         setNfts(data);
       }
@@ -173,41 +199,43 @@ export default function Token({ params, searchParams }: TokenParams) {
   }, [nfts, approvalData, lensNfts]);
 
   const showLoading = disableloading !== "true" && nftMetadataLoading;
-console.log("nftMetadata", nftMetadata)
+  console.log("nftMetadata", nftMetadata)
   return (
     <div className="h-screen w-screen bg-slate-100">
-     
+
       <div className="max-w-screen relative mx-auto aspect-square max-h-screen overflow-hidden bg-white">
-      <h2 className="text-with-fade-in" 
-           style={{
+        <h2 className="text-with-fade-in"
+          style={{
             color: "white",
             backgroundColor: "transparent",
             fontSize: "11vw",
             fontWeight: "bold",
             position: "absolute",
-            top: "23%", 
+            top: "23%",
             right: "-20%",
             marginRight: 'auto',
             zIndex: "2",
             transform: "rotate(90deg)",
             opacity: "0",
+            userSelect: "none"
           }}
-          >DICEPASS</h2>
-           <h2 className="text-with-fade-in" 
-           style={{
+        >DICEPASS</h2>
+        <h2 className="text-with-fade-in"
+          style={{
             color: "white",
             backgroundColor: "transparent",
             fontSize: "11vw",
             fontWeight: "bold",
             position: "absolute",
-            top: "60%", 
+            top: "60%",
             left: "-20%",
             marginRight: 'auto',
             zIndex: "2",
             transform: "rotate(270deg)",
             opacity: "0",
+            userSelect: "none"
           }}
-          >DICEPASS</h2>
+        >DICEPASS</h2>
         <div className="relative h-full w-full" >
           {account && nftImages && nftMetadata && (
             <TokenDetail
@@ -221,7 +249,7 @@ console.log("nftMetadata", nftMetadata)
               logo={logo}
             />
           )}
-        
+
           <div className="absolute inset-0 border-20 border-white z-4 text-with-fade-in" style={{
             // backgroundColor:" #BAD9FF",
             borderColor: " white",
@@ -229,47 +257,58 @@ console.log("nftMetadata", nftMetadata)
             borderWidth: '15px',
             zIndex: '1',
             opacity: '0'
-            }}/>
-          <div className="max-h-1080[px] relative h-full w-full max-w-[1080px] z-2" style={{backgroundColor:"white"}}>
+          }} />
+          <div className="max-h-1080[px] relative h-full w-full max-w-[1080px] z-2" style={{ backgroundColor: "white" }}>
             {showLoading ? (
               <div className="absolute left-[10%] top-[15%] z-10 h-20 w-20 -translate-x-[50%] -translate-y-[50%] animate-bounce">
                 <TbLogo />
               </div>
             ) : (
-             
+
               <div
-              style={{
-                // background:
-                //   "linear-gradient(to top,  #4994F6, #BAD9FF,  #BAD9FF,#4994F6",
-                alignItems: "center",
-                display: "flex", 
-                justifyContent: "center", 
-                flexDirection: "column", 
-              }}
-              className={`gradient-q bg-white h-full w-full grid grid-cols-1 grid-rows-1 transition ${
-                imagesLoaded ? "" : "blur-xl"
-              }`}
-            >
-              {!isNil(nftImages) ? (
-                nftImages.map((image, i) => (
-                  <img
-                    key={i}
-                    className="col-span-1 col-start-1 row-span-1 row-start-1 translate-x-0 levitating-image"
-                    src={image}
-                    alt="Nft image"
-                    // style={{
-                    //   width: "57%",
-                    //   borderWidth: '4px',
-                    
-                    // }}
-                  />
-                ))
-              ) : (
-                <></>
-              )}
-            </div>
+                style={{
+                  // background:
+                  //   "linear-gradient(to top,  #4994F6, #BAD9FF,  #BAD9FF,#4994F6",
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                }}
+                className={`gradient-q bg-white h-full w-full grid grid-cols-1 grid-rows-1 transition ${imagesLoaded ? "" : "blur-xl"
+                  }`}
+              >
+
+                {!isNil(nftImages) ? (
+                  nftImages.map((image, i) => (
+                    // <img
+                    //   key={i}
+                    //   className="col-span-1 col-start-1 row-span-1 row-start-1 translate-x-0 levitating-image"
+                    //   src={image}
+                    //   alt="Nft image"
+                    //   // style={{
+                    //   //   width: "57%",
+                    //   //   borderWidth: '4px',
+
+                    //   // }}
+                    // />
+                    <div id="myWrap" className="wrap col-span-1 col-start-1 row-span-1 row-start-1 translate-x-0" onClick={handleFlipClick}>
+                      <div className={`side-a ${isFlipped ? 'flipped' : ''}`} >
+                        <img src={image} alt="Nft image" />
+                      </div>
+                      <div className={`side-b ${isFlipped ? 'flipped' : ''}`}  >
+                        <img src={image} alt="Nft image" />
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <></>
+                )}
+
+
+              </div>
             )}
           </div>
+
           <div className="container"></div>
         </div>
       </div>
