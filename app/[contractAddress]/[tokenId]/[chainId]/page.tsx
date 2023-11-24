@@ -291,11 +291,11 @@ export default function Token({ params, searchParams }: TokenParams) {
 
                     //   // }}
                     // />
-                    <div id="myWrap" className="wrap col-span-1 col-start-1 row-span-1 row-start-1 translate-x-0" onClick={handleFlipClick}>
-                      <div className={`side-a ${isFlipped ? 'flipped' : ''}`} >
+                    <div key={i} className="wrap col-span-1 col-start-1 row-span-1 row-start-1 translate-x-0" onClick={handleFlipClick}>
+                      <div className={`side-a ${isFlipped ? 'flipped' : ''}`}>
                         <img src={image} alt="Nft image" />
                       </div>
-                      <div className={`side-b ${isFlipped ? 'flipped' : ''}`}  >
+                      <div className={`side-b ${isFlipped ? 'flipped' : ''}`}>
                         <img src={image} alt="Nft image" />
                       </div>
                     </div>
