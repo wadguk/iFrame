@@ -44,18 +44,24 @@ export default function Token({ params, searchParams }: TokenParams) {
     hasCustomImplementation: HAS_CUSTOM_IMPLEMENTATION,
     chainId: chainIdNumber,
   });
-  const container = document.querySelector(".container");
+ 
+  useEffect(() => {
+    const container = document.querySelector(".container");
+  
+    if (container) {
+      for (let i = 1; i <= 100; i++) {
+        const circleContainer = document.createElement("div");
+        circleContainer.classList.add("circle-container");
+  
+        const circle = document.createElement("div");
+        circle.classList.add("circle");
+  
+        circleContainer.appendChild(circle);
+        container.appendChild(circleContainer);
+      }
+    }
+  }, []); 
 
-  for (let i = 1; i <= 3; i++) {
-    const circleContainer = document.createElement("div");
-    circleContainer.classList.add("circle-container");
-
-    const circle = document.createElement("div");
-    circle.classList.add("circle");
-
-    circleContainer.appendChild(circle);
-    container?.appendChild(circleContainer);
-  }
   useEffect(() => {
     if (!isNil(nftImages) && nftImages.length) {
       const imagePromises = nftImages.map((src: string) => {
