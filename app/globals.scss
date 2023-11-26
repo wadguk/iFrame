@@ -129,18 +129,6 @@ body {
 	}
 }
 
-@keyframes floatS {
-  0% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-	}
-	50% {
-		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-	}
-	100% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-	}
-}
-
 /* Стили при наведении */
 .levitating-image:hover {
   --top-position: 5%;
@@ -296,8 +284,17 @@ body {
 }
 
 
-
-
+@keyframes floatS {
+  0% {
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 25px 15px rgba(0, 0, 0, 0.2));
+  }
+  100% {
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.6));
+  }
+}
 
 .wrap {
   position: absolute;
@@ -313,8 +310,10 @@ body {
 
   border-radius: 15px;
   width: 57%;
-  top: var(--top-position, 5%);
+  top: var(--top-position, 4%);
   left: 22%;
+  // animation: floatS 4s ease-in-out infinite; 
+
 }
 
 .wrap div {
@@ -324,7 +323,7 @@ body {
   // background-position: 50% 50%;
   background-size: 250px;
   background-repeat: no-repeat;
-  box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.3), 0 12px 20px -10px rgba(0, 0, 0, 0.4);
+  // box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.3), 0 12px 20px -10px rgba(0, 0, 0, 0.4);
   color: #fff;
   text-align: center;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
@@ -337,16 +336,36 @@ body {
   // top: var(--top-position, 5%);
   // left: 22%;
   border-radius: 15px;
-  border-width: 4px;
-  border-color: #ffffff; 
+  // border-width: 4px;
+  // border-color: #ffffff; 
   z-index: 3;
   padding: 5px;
-  background-color: rgba(36, 21, 50, 0.925);
+  background-color: rgba(36, 21, 50, 0);
   animation: floatS 4s ease-in-out infinite; 
-
+  // filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 
-.side-a {
+.wrap:hover img{
+  filter: drop-shadow(0px 0px 22px rgba(229, 160, 12, 0.995));
+}
+
+// .side-a:hover img{
+//   filter: drop-shadow(0px 0px 22px rgba(229, 160, 12, 0.995));
+// }
+// .side-b:hover img{
+//   filter: drop-shadow(0px 0px 22px rgba(229, 160, 12, 0.995));
+// }
+.side-a img{
+  filter: drop-shadow(3px 5px 7px rgb(0 0 0 / 0.4));
+  // animation: floatS 4s ease-in-out infinite; 
+  // animation: floatS 4s ease-in-out infinite; 
+}
+.side-b img{
+  filter: drop-shadow(3px 5px 7px rgb(0 0 0 / 0.4));
+  // animation: floatS 4s ease-in-out infinite; 
+}
+
+.side-a{
   background: black;
   transform: rotateY(0deg);
   z-index: 100;
@@ -362,20 +381,21 @@ body {
 }
 
 .wrap:hover .side-a {
+  filter: drop-shadow(3px 5px 12px rgba(255, 255, 255, 0.899));
   // animation: none;
   // transform: rotateY(-180deg);
-  border-width: 8px;
-  border-color: rgb(255, 255, 255);
-  box-shadow:  0 0 45px rgba(243, 248, 252, 0.767);
+  // border-width: 8px;
+  // border-color: rgb(255, 255, 255);
+  // box-shadow:  0 0 45px rgba(243, 248, 252, 0.767);
 
 }
 
 .wrap:hover .side-b {
   // animation: none;
   // transform: rotateY(0deg);
-  border-width: 8px;
-  border-color: rgb(255, 255, 255);
-  box-shadow:  0 0 45px rgba(250, 252, 255, 0.767);
+  // border-width: 8px;
+  // border-color: rgb(255, 255, 255);
+  // box-shadow:  0 0 45px rgba(250, 252, 255, 0.767);
 }
 
 .side-a.flipped {
@@ -384,4 +404,19 @@ body {
 
 .side-b.flipped {
   transform: rotateY(0deg);
+}
+
+.test{
+  box-shadow:  0 0 15px rgba(11, 11, 11, 0.767);
+
+}
+
+.svgShadow{
+  // position: ;
+  width: 30%;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+.svgShadowa{
+  width: 30%;
+  // filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
